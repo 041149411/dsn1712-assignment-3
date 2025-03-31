@@ -1,5 +1,7 @@
+/*applies to entire page*/
+
 * {
-  box-sizing: border-box;  
+  box-sizing: border-box;
 }
 
 body {
@@ -7,10 +9,17 @@ body {
   line-height: 1.4;
 }
 
+/*HEADER SECTION*/
+
+/*black top bar*/
+
 header {
   background-color: #000;
   color: #fff;
+  padding: 0 50px;
 }
+
+/*using flexbox for name and nav links to display left & right*/
 
 header .wrapper {
   display: flex;
@@ -20,12 +29,15 @@ header .wrapper {
   margin: 0 auto;
 }
 
+/* the 'a' targets the links to style*/
 
 nav a {
   color: #fff;
-  text-decoration: none;
+  text-decoration: none; /*removes underline of link*/
+  font-size: .8rem;
 }
 
+/*algining navigation*/
 
 nav ul {
   display: flex;
@@ -33,32 +45,35 @@ nav ul {
   gap: 20px; 
 }
 
-/*Hero image with title section*/
+/*HERO IMAGE WITH TITLE SECTION*/
 
 #hero {
   height: 600px;
-  background-image: url(./../images/hands-typing.jpg);
+  background-image: url(../images/hands-typing.jpg); 
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
-  filter: grayscale(70%);
+  filter: grayscale(70%); /*to make image dull/greys*/
   padding-top: 225px;
 }
 
 
 h1 {
-  display: flex;
-  background-color: rgba(0, 0, 0, 0.5);
-  color:#fff;
-  padding: 30px;
-  margin: 0 auto;
   max-width: 60%;
+  background-color: rgba(0, 0, 0, 0.5); /*adding black background box under text*/
+  color:#fff;
   text-shadow: 2px 2px #000;
+  padding: 30px;
+
+  /*to center title contents*/
+  display: flex;
+  margin: 0 auto;
   text-align: center;
 }
 
-/*About Me Section*/
+/*ABOUT ME SECTION*/
 
+/*centering content*/
 #about-me {
   display: flex;
   justify-content: center;
@@ -66,7 +81,7 @@ h1 {
 
 #about-me .wrapper {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr; /*using grid to create 2 column layout*/
   max-width: 940px;
   margin-top: 10px;
   margin-bottom: 10px;
@@ -75,13 +90,14 @@ h1 {
 
 
 .wrapper img {
-  width: 100%;
+  width: 80%;
   align-self: end;
 }
 
 
-/*Services Section*/
+/*SERVICES SECTION*/
 
+/*creating a 3 column grid*/
 #services .wrapper {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -90,6 +106,7 @@ h1 {
   padding: 20px 20px;
 }
 
+/*targeting services grey section with title: What I can do for you*/
 #services {
   max-width: 940px;
   margin: 0 auto;
@@ -98,12 +115,12 @@ h1 {
   padding: 30px 20px; 
 
 }
-
+/*white boxes behind each section*/
 #services .wrapper article {
   background-color: #fff;
   padding: 0 20px;
 
-
+/*flexbox applied to change direction of column*/
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -111,6 +128,7 @@ h1 {
 
 /*Buttons*/
 
+/*static button customizations*/
 #services a:link,
 #services a:visited {
   display: inline-block;
@@ -123,6 +141,7 @@ h1 {
   margin-top: auto;
 }
 
+/*hover button customizations*/
 #services a:hover,
 #services a:focus {
   background-color: #fff;
@@ -130,33 +149,25 @@ h1 {
 }
 
 
-/*My Work Section*/
+/*MY WORK SECTION*/
 
+/*centering title and body text*/
 #work .wrapper {
   max-width: 940px;
   margin: 0 auto;
   text-align: center;
 }
 
-
-
+/*using grid and setting up the columns and rows, 6 x 6*/
 .grid {
   display: grid;
   max-width: 940px;
   grid-template-columns: repeat(6, 1fr);
   grid-template-rows: repeat(6, 1fr);
-  justify-content: center;
-  gap: 0;
-  padding: 0px;
- 
-
-  
- 
-
-  
+  padding-bottom: 40px;
 
 
-
+  /*using grid areas method to define image layout*/
   grid-template-areas:
   "div1 div1 div1 div2 div2 div2"
   "div1 div1 div1 div2 div2 div2"
@@ -165,60 +176,46 @@ h1 {
   "div3 div3 div4 div4 div5 div5"
   "div3 div3 div4 div4 div5 div5"
   ;
-
-
 }
 
+/*calling each photo based on grid template area that was set up above*/
 .first-photo {
   grid-area: div1;
- 
-  
 }
 
 .second-photo {
   grid-area: div2;
-  
- 
-  
 }
 
 .third-photo {
   grid-area: div3;
- 
-  
-
-  
 }
 
 .fourth-photo {
   grid-area: div4;
-  
-  
-
-
 }
 
 .fifth-photo {
   grid-area: div5;
-  
- 
-  
+}
+
+/*to remove horizontal space between photos*/
+.grid img {
+  width: 100%;
+  height: 100%;
 }
 
 
 
+/*FOOTER SECTION*/
 
-
-
-
-
-
+/*black bar on bottom*/
 footer {
   background-color: #000;
+  padding: 10px;
+  text-align: center;
   color: #fff
 }
 
-footer .footer {
-  text-align: center;
-}
+
 
